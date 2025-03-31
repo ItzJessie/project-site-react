@@ -1,11 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import './countDown.css'; 
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import backImage from '../../assets/images/back.png'; 
 
 function CountDown() {
   const [selectedGame, setSelectedGame] = useState('mk-9');
   const [timeLeft, setTimeLeft] = useState({});
   const [counting, setCounting] = useState(false);
   const [setInterval, setCountdownInterval] = useState(null);
+
+  const navigate = useNavigate(); // Initialize useNavigate
+  
+  // Function to handle the back button click
+  const handleBackClick = () => {
+    navigate(-1); // Go back to the previous page
+  };
+  
+
 
   // Array of games and their release dates (example dates, replace with actual release dates)
   const gameDates = {
@@ -64,6 +75,11 @@ function CountDown() {
 
   return (
     <div>
+
+<button onClick={handleBackClick} className="back-button">
+        {/* Use the imported back image */}
+        <img id="back" src={backImage} alt="back arrow" />
+      </button>
       <label htmlFor="games">Choose a game:</label>
       <select name="games" id="games" value={selectedGame} onChange={handleGameChange} required>
         <option value="mk-9">Mario Kart 9</option>
@@ -125,6 +141,7 @@ function CountDown() {
           Reset Countdown
         </button>
       </div>
+      
     </div>
   );
 }

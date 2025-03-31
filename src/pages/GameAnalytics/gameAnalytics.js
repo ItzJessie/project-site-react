@@ -1,14 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; 
 import './gameAnalytics.css'; 
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import backImage from '../../assets/images/back.png'; 
 
 function GameAnalytics() {
+ const navigate = useNavigate(); // Initialize useNavigate
+
+// Function to handle the back button click
+const handleBackClick = () => {
+  navigate(-1); // Go back to the previous page
+};
+
   return (
     <div id="container">
-      {/* Back Link */}
-      <Link to="/countdown">
-        <img id="back" src="images/back.png" alt="back arrow" />
-      </Link>
+      
 
       {/* Step Sections */}
       <section className="game container-1">
@@ -69,6 +75,11 @@ function GameAnalytics() {
           <p>Launch & post-launch support</p>
         </section>
       </section>
+      {/* Back Button */}
+      <button onClick={handleBackClick} className="back-button">
+        {/* Use the imported back image */}
+        <img id="back" src={backImage} alt="back arrow" />
+      </button>
     </div>
   );
 }

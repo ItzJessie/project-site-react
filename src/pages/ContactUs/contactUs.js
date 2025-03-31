@@ -1,9 +1,17 @@
 import React, { useState } from 'react';
 import './contactUs.css'; 
-
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import backImage from '../../assets/images/back.png'; 
 
 function ContactUs() {
   const [formStatus, setFormStatus] = useState('');
+
+  const navigate = useNavigate();
+
+  // Function to handle the back button click
+  const handleBackClick = () => {
+    navigate(-1); // Go back to the previous page
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault(); // Prevent the default form submission
@@ -21,6 +29,12 @@ function ContactUs() {
   return (
     <div id="back01">
       <div id="back02">
+{/* Back Button */}
+<button onClick={handleBackClick} className="back-button">
+    {/* Use the imported back image */}
+    <img id="back" src={backImage} alt="back arrow" />
+  </button>
+
         <div className="contact-container">
           <form id="contact-form" action="mailto:jessiebrownjapan@gmail.com" method="post" enctype="text/plain" onSubmit={handleSubmit}>
             <h1>Contact Us</h1>
@@ -50,6 +64,7 @@ function ContactUs() {
         </div>
       </div>
     </div>
+    
   );
 }
 
