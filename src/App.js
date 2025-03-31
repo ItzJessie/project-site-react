@@ -1,29 +1,29 @@
 import './App.css';
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Navbar from './components/navbar';
-import Footer from './components/footer';
-import Home from './pages/Home';
-import CountDown from './pages/countDown';
-import GameAnalytics from './pages/gameAnalytics';
-import SupportUs from './pages/supportUs';
-import ContactUs from './pages/contactUs';
+import Navbar from './components/Navbar/navbar';
+import Footer from './components/Footer/footer';
+import Home from './pages/Home/Home';
+import CountDown from './pages/Countdown/countDown';
+import GameAnalytics from './pages/GameAnalytics/gameAnalytics';
+import SupportUs from './pages/SupportUs/supportUs';
+import ContactUs from './pages/ContactUs/contactUs';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 function App() {
   return (
-    <>
+    <Router>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/Home" element={<Home />} />
         <Route path="/countdown" element={<CountDown />} />
-        <Route path="/gameAnalytics" element={<GameAnalytics />} />
-        <Route path="/SupportUs" element={<SupportUs />} />
-        <Route path="/ContactUs" element={<ContactUs />} />
+        <Route path="/gameanalytics" element={<GameAnalytics />} />
+        <Route path="/supportus" element={<SupportUs />} />
+        <Route path="/contactus" element={<ContactUs />} />
       </Routes>
       <Footer />
-    </>
+    </Router>
   );
 }
-
 
 export default App;

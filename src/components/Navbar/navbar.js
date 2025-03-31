@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Navbar.css'; // Import the associated CSS
+import { Link } from 'react-router-dom';
 
 function Navbar() {
   const [isNavOpen, setNavOpen] = useState(false); // State to toggle the navigation menu on small screens
@@ -20,12 +21,11 @@ function Navbar() {
 
       {/* Navigation items */}
       <ul id="nav-items" className={`columns ${isNavOpen ? 'show' : 'hide-small'}`}>
-        <li><a className="active" href="#">Home</a></li>
-        <li><a href="/countdown">Countdown</a></li>
-        <li><a href="/game-analytics">Game Analytics</a></li>
-        <li><a href="/upcoming-release">Upcoming Release</a></li>
-        <li><a href="/support-us">Support Us</a></li>
-        <li><a href="/contact-us">Contact Us</a></li>
+      <Link to="/Home">Home</Link>
+      <Link to="/countDown">Countdown</Link>
+      <Link to="/gameAnalytics">Game Analytics</Link>
+      <Link to="/supportUs">Support Us</Link>
+      <Link to="/contactUs">Contact US</Link>
       </ul>
     </nav>
   );

@@ -1,4 +1,5 @@
 import React from 'react';
+import './supportUs.css'; 
 
 function SupportUs() {
   const handleDonateClick = () => {

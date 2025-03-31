@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import './countDown.css'; 
 
 function CountDown() {
   const [selectedGame, setSelectedGame] = useState('mk-9');
   const [timeLeft, setTimeLeft] = useState({});
   const [counting, setCounting] = useState(false);
-  const [countdownInterval, setCountdownInterval] = useState(null);
+  const [setInterval, setCountdownInterval] = useState(null);
 
   // Array of games and their release dates (example dates, replace with actual release dates)
   const gameDates = {
@@ -23,7 +24,7 @@ function CountDown() {
         const targetDate = gameDates[selectedGame];
         const now = new Date();
         const diff = targetDate - now;
-
+  
         if (diff <= 0) {
           clearInterval(interval);
           setCounting(false);
@@ -33,15 +34,15 @@ function CountDown() {
           const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
           const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
           const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
+  
           setTimeLeft({ months, days, hours, minutes, seconds });
         }
       }, 1000);
-      setCountdownInterval(interval);
-
+  
       return () => clearInterval(interval); // Cleanup interval on unmount
     }
-  }, [counting, selectedGame]);
+  }, [counting, selectedGame, gameDates]);  // Add gameDates to the dependency array
+  
 
   // Handle game selection change
   const handleGameChange = (event) => {

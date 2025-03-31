@@ -1,0 +1,30 @@
+/* Footer Styles */
+#footer {
+    background-color: #333; /* Dark background for the footer */
+    color: white;           /* White text color */
+    text-align: center;     /* Center the text */
+    padding: 1rem;          /* Add some padding around the footer */
+    font-size: 14px;        /* Set a small font size */
+    position: relative;     /* Ensures it stays in place */
+    bottom: 0;              /* Stick it at the bottom of the page */
+    width: 100%;            /* Make the footer span the whole width */
+  }
+  
+  #footer a {
+    color: white;           /* Links should also be white */
+    text-decoration: none;  /* Remove underline from links */
+  }
+  
+  #footer a:hover {
+    text-decoration: underline; /* Underline the link on hover */
+  }
+  
+  /* Optional: Add a border at the top for separation */
+  #footer::before {
+    content: "";
+    display: block;
+    height: 1px;
+    background-color: #444; /* Light grey color for the border */
+    margin-bottom: 1rem;
+  }
+  

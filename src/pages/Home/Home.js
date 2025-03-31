@@ -1,9 +1,11 @@
 import React from 'react';
+import './Home.css'; 
+
 function Home() {
   return (
     <div id="container">
                 <h1 id="clickable-word">
-                    <a href="countDown.html">
+                    <a href="/countDown">
                     <span>Welcome in!</span>
                     </a>
                 </h1>
