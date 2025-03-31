@@ -1,0 +1,4 @@
+.navbar { display: flex; justify-content: space-between; padding: 10px; background: #333; color: white; }
+.navbar ul { list-style: none; display: flex; }
+.navbar li { margin: 0 10px; }
+.footer { text-align: center; padding: 10px; background: #333; color: white; position: absolute; bottom: 0; width: 100%; }
